@@ -21,8 +21,6 @@ elixir.extend('phplint', function(src, options) {
             message: '<%= error.message %>',
             icon: path.join(__dirname, '../laravel-elixir/icons/fail.png')
         })(err);
-
-        this.emit('end');
     };
 
     gulp.task('phplint', function() {
