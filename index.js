@@ -2,7 +2,7 @@
 
 var gulp = require('gulp');
 var phplint = require('phplint');
-var notify = require('notify');
+var notify = require('gulp-notify');
 var elixir = require('laravel-elixir');
 var path = require('path');
 
