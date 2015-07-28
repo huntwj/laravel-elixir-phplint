@@ -26,7 +26,7 @@ elixir.extend('phplint', function(src, options) {
     };
 
     gulp.task('phplint', function() {
-        phplint(src, options, function(err) {
+        phplint.lint(src, options, function(err) {
             if (err) {
                 onError(err);
             } else {
