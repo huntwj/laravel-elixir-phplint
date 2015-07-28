@@ -33,3 +33,9 @@ elixir(function(mix) {
   ]);
 }
 ```
+
+## Credits
+
+The general form and structure as well as some code snippets of this plugin were borrowed 
+(or viciously stolen?) from the ponko2/laravel-elixir-eslint project on Github.
+
