@@ -1,6 +1,6 @@
 {
   "name": "laravel-elixir-phplint",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "PHPLint Plugin for Laravel's Elixir",
   "main": "index.js",
   "scripts": {
