@@ -22,7 +22,7 @@ var elixir = require('laravel-elixir');
 require('laravel-elixir-phplint');
 
 elixir(function(mix) {
-  mix.phpLint();
+  mix.phplint();
 }
 ```
 ### Advanced Example
@@ -33,7 +33,7 @@ var elixir = require('laravel-elixir');
 require('laravel-elixir-phplint');
 
 elixir(function(mix) {
-  mix.phpLint([
+  mix.phplint([
     'app/**/*.php',
     'test/**/*.php'
   ]);
