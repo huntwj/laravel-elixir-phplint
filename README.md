@@ -6,6 +6,12 @@
 $ npm install laravel-elixir-phplint --save-dev
 ```
 
+or during development for the latest version:
+
+```bash
+$ npm install huntwj/laravel-elixir-phplint --save-dev
+```
+
 ## Usage
 
 ### Example Gulpfile
