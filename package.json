@@ -1,0 +1,29 @@
+{
+  "name": "laravel-elixir-phplint",
+  "version": "0.0.1",
+  "description": "PHPLint Plugin for Laravel's Elixir",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error. No tests yet written. :(\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:huntwj/laravel-elixir-phplint.git"
+  },
+  "keywords": [
+    "phplint",
+    "lint",
+    "elixir",
+    "laravel"
+  ],
+  "author": "Wil Hunt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huntwj/laravel-elixir-phplint/issues"
+  },
+  "homepage": "https://github.com/huntwj/laravel-elixir-phplint#readme",
+  "dependencies": {
+    "gulp-notify": "^2.2.0",
+    "phplint": "^1.5.2"
+  }
+}
