@@ -1,44 +1,28 @@
 'use strict';
 
 var gulp = require('gulp');
-var phplint = require('phplint');
-var notify = require('gulp-notify');
-var elixir = require('laravel-elixir');
-var path = require('path');
+var Elixir = require('laravel-elixir');
+var phplint = require('gulp-phplint');
 
-elixir.extend('phplint', function(src, options) {
-    src = src || [
-        'app/**/*.php',
-        'test/**/*.php'
-    ];
+Elixir.extend('phplint', function(src, options) {
+    var paths = new Elixir.GulpPaths()
+    .src(src || [
+        './app/**/*.php',
+        './test/**/*.php'
+    ]);
 
-    options = options || {};
+    var notify = new Elixir.Notification();
 
-    var onError = function(err) {
-        notify.onError({
-            title: 'Laravel Elixir',
-            subtitle: 'PHPLint Failed',
-            message: '<%= error.message %>',
-            icon: path.join(__dirname, '../laravel-elixir/icons/fail.png')
-        })(err);
+    var onError = function (err) {
+        notify.error(err, 'PHPLint Failed');
+        this.emit('end');
     };
 
-    gulp.task('phplint', function() {
-        phplint.lint(src, options, function(err) {
-            if (err) {
-                onError(err);
-            } else {
-                notify({
-                    title: 'Laravel Elixir',
-                    message: 'PHPLint Passed',
-                    icon: path.join(__dirname, '../laravel-elixir/icons/pass.png'),
-                    onLast: true
-                });
-            }
-        });
-    });
-
-    this.registerWatcher('phplint', src);
-
-    return this.queueTask('phplint');
+    new Elixir.Task('phplint', function () {
+        this.log(paths.src);
+        return gulp.src(paths.src.path)
+          .pipe(phplint('', options || {skipPassedFiles: true}))
+          .pipe(phplint.reporter('fail'))
+          .on('error', onError);
+      }).watch(paths.src.path);
 });
