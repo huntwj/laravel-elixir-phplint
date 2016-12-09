@@ -1,6 +1,6 @@
 {
   "name": "laravel-elixir-phplint",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "PHPLint Plugin for Laravel's Elixir",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/huntwj/laravel-elixir-phplint#readme",
   "dependencies": {
-    "gulp-notify": "^2.2.0",
-    "phplint": "^1.5.2"
+    "gulp-phplint": "^0.3.2"
   }
 }
